@@ -9,6 +9,14 @@ Uses ES6 classes and decorators
 import the scss file
 ```
 @import 'ember-app-notice'
+
+// contains overridable variables by setting these before you import `ember-app-notice`
+
+$ember-app-notice--text: white;
+$ember-app-notice--orange: #FEB14F;
+$ember-app-notice--yellow: #EC8213;
+$ember-app-notice--green: #8abf54;
+$ember-app-notice--menuHeight: 85px;
 ```
 
 anywhere in your app, call the service and pass it a message and level
