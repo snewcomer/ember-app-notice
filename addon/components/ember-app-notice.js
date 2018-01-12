@@ -9,6 +9,11 @@ import { restartableTask } from 'ember-concurrency-decorators';
 import { classNames, className, tagName } from 'ember-decorators/component';
 import { equal } from 'ember-decorators/object/computed';
 import { computed } from 'ember-decorators/object';
+import Ember from 'ember';
+
+const { testing } = Ember;
+
+const TIMEOUT = testing ? 0 : 5000;
 
 @tagName('ember-app-notice')
 @classNames('animated-fast')
@@ -55,16 +60,16 @@ export default class AppNotice extends Component {
   click() {
     this.toggleProperty('slideOutUp');
     this.toggleProperty('slideInDown');
-    run.later(this, 'send', 'dismiss', 5000);
+    run.later(this, 'send', 'dismiss', TIMEOUT);
   }
 
   @restartableTask
   dismissTask = function * () {
-    yield timeout(5000);
+    yield timeout(TIMEOUT);
     const isSuccess = get(this, 'isSuccess');
     if (isSuccess) {
       this.toggleProperty('slideOutUp');
-      run.later(this, 'send', 'dismiss', 5000);
+      run.later(this, 'send', 'dismiss', TIMEOUT);
     }
   }
 
