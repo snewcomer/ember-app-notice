@@ -1,3 +1,7 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+{{#if message}}
+  {{ember-app-notice
+    message=message
+    noticeLevel=level
+    on-dismiss=(action 'dismiss_errors')
+  }}
+{{/if}}

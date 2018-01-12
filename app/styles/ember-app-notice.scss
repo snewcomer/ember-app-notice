@@ -1,0 +1,42 @@
+$ember-app-notice--text: white;
+$ember-app-notice--orange: #FEB14F;
+$ember-app-notice--yellow: #EC8213;
+$ember-app-notice--green: #8abf54;
+$ember-app-notice--menuHeight: 85px;
+
+ember-app-notice {
+  color: $ember-app-notice--text;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  line-height: $ember-app-notice--menuHeight;
+  height: $ember-app-notice--menuHeight;
+  display: flex;
+  align-items: center;
+
+  &.app-notice--error {
+    background-color: $ember-app-notice--orange;
+  }
+  &.app-notice--warning {
+    background-color: $ember-app-notice--yellow;
+  }
+  &.app-notice--success {
+    background-color: $ember-app-notice--green;
+  }
+
+  .app-notice__icon {
+    font-size: 2rem;
+    padding: .125rem 1rem .125rem 1.25rem;
+    float: left;
+  }
+
+  .app-notice__msg {
+    text-align: left;
+  }
+
+  .app-notice__dismiss {
+    padding: .125rem 1rem;
+  }
+}
