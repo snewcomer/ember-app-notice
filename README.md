@@ -6,6 +6,10 @@ Uses ES6 classes and decorators
 
 ## Usage
 
+```
+ember install ember-app-notice
+```
+
 import the scss file
 ```
 @import 'ember-app-notice'
