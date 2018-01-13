@@ -1,6 +1,6 @@
 {
   "name": "ember-app-notice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "App notice for general errors and offline/online events",
   "keywords": [
     "ember-addon",
