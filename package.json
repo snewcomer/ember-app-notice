@@ -7,12 +7,12 @@
     "notice"
   ],
   "license": "MIT",
-  "author": "SCott ",
+  "author": "Scott",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/snewcomer/ember-app-notice",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
