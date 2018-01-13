@@ -5,7 +5,8 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     'ember-font-awesome': {
-      fontFormats: ['woff', 'woff2']
+      fontFormats: ['woff', 'woff2'],
+      includeFontFiles: false
     }
   });
 
