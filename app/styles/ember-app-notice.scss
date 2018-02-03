@@ -7,7 +7,7 @@ $ember-app-notice--menuHeight: 85px;
 ember-app-notice {
   color: $ember-app-notice--text;
   font-size: 1.3rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
