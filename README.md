@@ -23,6 +23,46 @@ $ember-app-notice--green: #8abf54;
 $ember-app-notice--menuHeight: 85px;
 ```
 
+Include these styles for animations
+```
+.animated {
+  animation-duration: 1.0s;
+  animation-fill-mode: both;
+}
+
+.animated-fast {
+  animation-duration: 0.4s;
+  @extend .animated;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.slideOutUp {
+  animation-name: slideOutUp;
+}
+```
+
 anywhere in your app, call the service and pass it a message and level
 ```
 /**
