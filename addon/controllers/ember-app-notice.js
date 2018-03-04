@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
 import { get } from '@ember/object';
-import { service } from 'ember-decorators/service';
-import { reads } from 'ember-decorators/object/computed';
-import { action } from 'ember-decorators/object';
+import { service } from '@ember-decorators/service';
+import { reads } from '@ember-decorators/object/computed';
+import { action } from '@ember-decorators/object';
 
 export default class ApplicationController extends Controller {
   @service emberAppNotice
@@ -51,7 +51,7 @@ export default class ApplicationController extends Controller {
     @type String|null
     @default null
   */
-  @reads('emberAppNotice.level') level 
+  @reads('emberAppNotice.level') level
 
   /**
     @method dismiss_errors

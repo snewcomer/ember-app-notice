@@ -1,19 +1,19 @@
 import Component from '@ember/component';
 import layout from '../templates/components/ember-app-notice';
 import { timeout } from 'ember-concurrency';
-import { get } from '@ember/object';
+import { get, set } from '@ember/object';
 import { run } from '@ember/runloop';
-import { action } from 'ember-decorators/object';
-import { attribute } from 'ember-decorators/component';
+import { action } from '@ember-decorators/object';
+import { attribute } from '@ember-decorators/component';
 import { restartableTask } from 'ember-concurrency-decorators';
-import { classNames, className, tagName } from 'ember-decorators/component';
-import { equal } from 'ember-decorators/object/computed';
-import { computed } from 'ember-decorators/object';
+import { classNames, className, tagName } from '@ember-decorators/component';
+// import { equal } from '@ember-decorators/object/computed';
+import { computed } from '@ember-decorators/object';
 import Ember from 'ember';
 
 const { testing } = Ember;
 
-const TIMEOUT = testing ? 0 : 5000;
+const TIMEOUT = testing ? 0 : 4000;
 
 @tagName('ember-app-notice')
 @classNames('animated-fast')
@@ -21,19 +21,19 @@ export default class AppNotice extends Component {
 
   @attribute role = 'alert';
 
-  @className('app-notice--error') isError = false;
-  @className('app-notice--warning') isWarning = false;
-  @className('app-notice--success') isSuccess = false;
+  @className('app-notice--error') isError = this.isError;
+  @className('app-notice--warning') isWarning =  this.isWarning;
+  @className('app-notice--success') isSuccess = this.isSuccess;
   @className('slideOutUp') slideOutUp = false;
   @className('slideInDown') slideInDown = true;
-  @equal('noticeLevel', 'error') isError;
-  @equal('noticeLevel', 'warning') isWarning;
-  @equal('noticeLevel', 'success') isSuccess;
+  // @equal('noticeLevel', 'error') isError;
+  // @equal('noticeLevel', 'warning') isWarning;
+  // @equal('noticeLevel', 'success') isSuccess;
 
   constructor() {
     super();
-    this.__noticeLevel = 'error';
     this.layout = layout;
+    this.isError = true;
   }
 
   /*
@@ -44,11 +44,18 @@ export default class AppNotice extends Component {
   */
   @computed
   get noticeLevel() {
-    return this[`__noticeLevel`];
+    return this[`__noticeLevel`] || 'error';
   }
   set noticeLevel(value) {
     get(this, 'dismissTask').perform();
     this['__noticeLevel'] = value;
+    this._setValue(value);
+  }
+
+  _setValue(value = 'error') {
+    set(this, 'isError', value === 'error' ? true : false);
+    set(this, 'isWarning', value === 'warning' ? true : false);
+    set(this, 'isSuccess', value === 'success' ? true : false);
   }
 
   @computed('noticeLevel')
