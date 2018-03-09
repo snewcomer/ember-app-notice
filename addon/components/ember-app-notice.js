@@ -67,7 +67,7 @@ export default class AppNotice extends Component {
   click() {
     this.toggleProperty('slideOutUp');
     this.toggleProperty('slideInDown');
-    run.later(this, 'send', 'dismiss', TIMEOUT);
+    run.later(this, 'send', 'dismiss', 500);
   }
 
   @restartableTask
