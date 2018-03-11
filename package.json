@@ -1,9 +1,10 @@
 {
   "name": "ember-app-notice",
   "version": "0.0.5",
-  "description": "Ember app notice",
+  "description": "Component, Mixin, Service, and Controller for global app notice",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "notice"
   ],
   "license": "MIT",
   "author": "Scott Newcomer",
@@ -30,7 +31,6 @@
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "broccoli-asset-rev": "^2.4.5",
-    "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
@@ -50,7 +50,6 @@
     "ember-source": "~3.0.0",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
-    "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
     "loader.js": "^4.2.3"
