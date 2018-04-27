@@ -4,7 +4,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import wait from 'ember-test-helpers/wait';
 
-module('scott Integration | Component | app notice', function(hooks) {
+module('Integration | Component | app notice', function(hooks) {
   setupRenderingTest(hooks);
 
   test('defaults to error level notice', async function(assert) {

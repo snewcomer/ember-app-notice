@@ -8,8 +8,8 @@ import { get, setProperties } from "@ember/object";
   @extends Service
 */
 export default class AppNotice extends Service {
-  constructor() {
-    super();
+  init(...args) {
+    super.init(...args);
 
     /**
       Message for display at the application level for notices

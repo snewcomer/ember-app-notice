@@ -7,8 +7,8 @@ import { action } from '@ember-decorators/object';
 export default class ApplicationController extends Controller {
   @service emberAppNotice
 
-  init() {
-    this._super(...arguments);
+  init(...args) {
+    super.init(...args);
 
     let appNotice = get(this, 'emberAppNotice');
     this._online = appNotice.notifyOnline.bind(appNotice);

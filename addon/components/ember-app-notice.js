@@ -30,8 +30,8 @@ export default class AppNotice extends Component {
   // @equal('noticeLevel', 'warning') isWarning;
   // @equal('noticeLevel', 'success') isSuccess;
 
-  constructor() {
-    super();
+  init(...args) {
+    super.init(...args);
     this.layout = layout;
     this.isError = true;
   }
