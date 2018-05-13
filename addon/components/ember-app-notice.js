@@ -13,7 +13,7 @@ import Ember from 'ember';
 
 const { testing } = Ember;
 
-const TIMEOUT = testing ? 0 : 4000;
+const TIMEOUT = testing ? 0 : 3000;
 
 @tagName('ember-app-notice')
 @classNames('animated-fast')
@@ -73,11 +73,8 @@ export default class AppNotice extends Component {
   @restartableTask
   dismissTask = function * () {
     yield timeout(TIMEOUT);
-    const isSuccess = get(this, 'isSuccess');
-    if (isSuccess) {
-      this.toggleProperty('slideOutUp');
-      run.later(this, 'send', 'dismiss', TIMEOUT);
-    }
+    this.toggleProperty('slideOutUp');
+    run.later(this, 'send', 'dismiss', TIMEOUT);
   }
 
   /**
