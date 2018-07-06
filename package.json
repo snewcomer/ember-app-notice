@@ -1,6 +1,6 @@
 {
   "name": "ember-app-notice",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Component, Mixin, Service, and Controller for global app notice",
   "keywords": [
     "ember-addon",
