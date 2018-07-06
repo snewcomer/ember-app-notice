@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, findAll, triggerEvent } from '@ember/test-helpers';
+import { render, find, findAll } from '@ember/test-helpers';
 import wait from 'ember-test-helpers/wait';
 
 module('Integration | Component | app notice', function(hooks) {
